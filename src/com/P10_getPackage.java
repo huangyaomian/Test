@@ -55,6 +55,7 @@ public class P10_getPackage {
 							jTextArea.setText(string.toString());
 						}
 					}
+					System.out.println("1111111111111");
 					process.waitFor();
 					rf.close();
 //					inputStream.close();
