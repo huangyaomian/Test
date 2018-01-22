@@ -1,7 +1,7 @@
 package com;
 
 public class MonkeySql {
-public static String monkey_Array [] = new String[9];
+public static String monkey_Array [] = new String[10];
 public static String Device_ID = "";
     public MonkeySql(){
     	for (int i = 0; i < monkey_Array.length; i++) {

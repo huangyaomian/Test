@@ -26,6 +26,7 @@ public class Monkey_run {
 		container.add(new P3_delay().P3_delay());
 		container.add(new P4_Constraint_package().P4_Constraint_package());
 		container.add(new P5_Run_times().P5_Run_times());
+		container.add(new SetSeedValue(). getSeedValue());
 		container.add(new P6_log_save().P6_log_save());
 		container.add(new P7_Start_and_finish().P7_Start_and_finish());
 		container.add(P9_Chart_switch());
@@ -42,7 +43,7 @@ public class Monkey_run {
 	public JPanel P9_Chart_switch() throws InterruptedException {
 		JPanel p9 = new JPanel();
 		p9.setBorder(BorderFactory.createTitledBorder("图表开关"));
-		p9.setBounds(15, 700, 200, 50);
+		p9.setBounds(15, 600, 200, 50);
 		JButton jButton = new JButton("log");
 		jButton.setBounds(15, 30, 50, 50);
 		jButton.addActionListener(new ActionListener() {
