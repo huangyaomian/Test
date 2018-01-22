@@ -34,14 +34,12 @@ public class P10_getPackage {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				try {
-//					Process process = Runtime.getRuntime().exec("cmd /c adb shell dumpsys activity | find \"mF\"");adb -s 127.0.0.1:62001 shell "dumpsys activity | grep  Focuse"
 					Process process;
 					if (MonkeySql.Device_ID == "") {
 						process = Runtime.getRuntime().exec("cmd /c adb shell \"dumpsys activity | grep  Focuse\"");
 					}else {
 						process = Runtime.getRuntime().exec("cmd /c adb "+ MonkeySql.Device_ID +" shell \"dumpsys activity | grep  Focuse\"");
 					}
-//					InputStream inputStream = process.getInputStream();
 					BufferedReader rf = new BufferedReader(new InputStreamReader(process.getInputStream()));
 					StringBuffer sBuffer = new StringBuffer();
 					String value = "";
@@ -51,11 +49,9 @@ public class P10_getPackage {
 							int start = sBuffer.lastIndexOf("u0 com.");
 							int end = sBuffer.lastIndexOf("/.");
 							String string =sBuffer.substring(start+2, end);
-							System.out.println(string.toString());
 							jTextArea.setText(string.toString());
 						}
 					}
-					System.out.println("1111111111111");
 					process.waitFor();
 					rf.close();
 //					inputStream.close();

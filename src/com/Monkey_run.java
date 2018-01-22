@@ -1,21 +1,14 @@
 package com;
-import java.awt.Button;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 /*
@@ -44,6 +37,8 @@ public class Monkey_run {
 			e.printStackTrace();
 		}		
 	}
+	
+	
 	public JPanel P9_Chart_switch() throws InterruptedException {
 		JPanel p9 = new JPanel();
 		p9.setBorder(BorderFactory.createTitledBorder("图表开关"));
@@ -55,7 +50,11 @@ public class Monkey_run {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					new P8(MonkeySql.Device_ID).setVisible(true);
+					if (MonkeySql.getmonkey_array_Specify_the_value(7).isEmpty()) {
+						JOptionPane.showMessageDialog(null, "约束包不能为空！！！", "【出错啦】", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					new P8("CPU使用情况图示").setVisible(true);
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -66,12 +65,10 @@ public class Monkey_run {
 		p9.add(jButton);
 		return p9;
 	}
+	
+	
 	public static void main(String [] agrs) {
 		new Monkey_run();
-		
-		
-		
-		
 		}
 	
 }	

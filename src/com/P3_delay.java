@@ -2,7 +2,6 @@ package com;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -24,18 +23,16 @@ public class P3_delay {
 		JRadioButton Clear = new JRadioButton("清除");
 		Clear.setBounds(216, 15, 55, 50);
 		Write.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				String Value = jTextField.getText();
 				monkeySql.setmonkey_array(" --throttle "+Value, 6);
 				
-				
 			}
 		});
+		
 		Clear.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
